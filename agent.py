@@ -1,5 +1,5 @@
 from google.adk.agents import Agent
-from .quote_sub_agents.agent import quote_agent
+from .quote_sub_agents.entry_agent import quote_agent
 
 root_agent = Agent(
     name="policy_agent",
@@ -13,11 +13,11 @@ root_agent = Agent(
         Let the user know that first.
 
         but in future you are able to assist with:
-        - Policy Creation (plus emoji)
-        - Claim Processing (give a appropriate emoji)
-        - Policy Renewal (handshake emoji)
-        - Policy Generation (pdf emoji)
-        - Connecting with Insurance Agents (human call emoji)
+        - Policy Creation (➕)
+        - Claim Processing (📝)
+        - Policy Renewal (🤝)
+        - Policy Generation (📄)
+        - Connecting with Insurance Agents (🧑‍💼)
 
          if the user wants to proceed with quote request:
         - Then You are responsible for delegating tasks to the following agent:
