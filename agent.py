@@ -1,5 +1,5 @@
 from google.adk.agents import Agent
-from .sub_agents.quote_request_agent.agent import quote_agent
+from .quote_sub_agents.agent import quote_agent
 
 root_agent = Agent(
     name="policy_agent",
