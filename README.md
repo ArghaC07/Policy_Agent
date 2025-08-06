@@ -27,6 +27,5 @@ car_insurance_bot/
 │
 ├── .env                            # Database credentials, config for ADK
 ├── requirements.txt                # Dependencies (GCP ADK, Gemini, SQL libs)
-├── main.py                         # Entry point to run FastAPI with root_agent
 ├── agent.py                        # Imports and registers root_agent
 ├── README.md
