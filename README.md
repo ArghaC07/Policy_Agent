@@ -78,3 +78,64 @@ ZIP risk factor (e.g., city traffic, accident rate)
 Driver age (younger = riskier)
 
 Chosen coverage plan
+
+def calculate_quote_with_tax(car_value, accident_history, driver_age, zip_risk, tax_rate=0.09):
+    plans = []
+
+    # Always include Liability
+    liability = {
+        "name": "Liability",
+        "description": "Covers damages to other vehicles and property.",
+        "base_price": 300
+    }
+    plans.append(liability)
+
+    # Add Collision if needed
+    if car_value > 15000 or accident_history or driver_age < 25:
+        plans.append({
+            "name": "Collision",
+            "description": "Covers your vehicle in case of accidents.",
+            "base_price": 450
+        })
+
+    # Add Comprehensive if car is valuable or ZIP is risky
+    if car_value > 25000 or zip_risk == "high":
+        plans.append({
+            "name": "Comprehensive",
+            "description": "Covers theft, vandalism, natural disasters.",
+            "base_price": 550
+        })
+
+    # Calculate tax and total
+    for plan in plans:
+        plan["tax"] = round(plan["base_price"] * tax_rate, 2)
+        plan["total"] = round(plan["base_price"] + plan["tax"], 2)
+
+    return {"recommended_plans": plans}
+
+
+{
+  "recommended_plans": [
+    {
+      "name": "Liability",
+      "description": "Covers damages to other vehicles and property.",
+      "base_price": 300,
+      "tax": 27.0,
+      "total": 327.0
+    },
+    {
+      "name": "Collision",
+      "description": "Covers your vehicle in case of accidents.",
+      "base_price": 450,
+      "tax": 40.5,
+      "total": 490.5
+    },
+    {
+      "name": "Comprehensive",
+      "description": "Covers theft, vandalism, natural disasters.",
+      "base_price": 550,
+      "tax": 49.5,
+      "total": 599.5
+    }
+  ]
+}

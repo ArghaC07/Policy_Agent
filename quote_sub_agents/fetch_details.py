@@ -1,5 +1,5 @@
 import os
-import pymysql  # or sqlalchemy
+import pymysql  
 from google.adk.agents import Agent
 
 # Tool definition: query_car_database
