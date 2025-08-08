@@ -3,8 +3,8 @@ from google.adk.agents import Agent
 from Policy_Agent.quote_sub_agents.fetch_details import fetch_details_agent
 
 quote_agent = Agent(
-    name="quote_sub_agent",
-    model="gemini-1.5-flash",
+    name="quote_sub_entry_agent",
+    model="gemini-2.0-flash",
     description="Agent that calculates car insurance premium.",
     instruction="""
 You are a quote request agent.

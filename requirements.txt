@@ -6,3 +6,5 @@ google-generativeai
 python-dotenv
 deprecated
 pymysql
+mysql-connector-python
+google-cloud-bigquery

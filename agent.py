@@ -2,7 +2,7 @@ from google.adk.agents import Agent
 from .quote_sub_agents.entry_agent import quote_agent
 
 root_agent = Agent(
-    name="policy_agent",
+    name="main_entry_agent",
     model="gemini-2.0-flash",
     description="Main entry agent to route user actions.",
     instruction="""
