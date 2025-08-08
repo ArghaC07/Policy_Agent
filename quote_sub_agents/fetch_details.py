@@ -6,6 +6,17 @@ from google.adk.agents import Agent
 def query_car_database(vin: str) -> dict:
     """Fetches car details using VIN from a BigQuery table."""
     try:
+        '''
+        car_info ={
+            "VIN_no": "1HGCM660487647wLnG",
+            "make": "Toyota",
+            "model": "Camry",
+            "manufacture_year": 2020,
+            "color": "Blue",
+            "accident_history": "No accidents"
+        }
+        return car_info
+        '''
         client = bigquery.Client(project="absolute-accord-465308-g0")
         
         query = f"""
@@ -27,7 +38,8 @@ def query_car_database(vin: str) -> dict:
         if not result:
             return {"error": "No record found for the provided VIN."}
         
-        return dict(result[0])  # Convert Row object to dictionary
+        return dict(result[0])
+        
 
     except Exception as e:
         return {"error": str(e)}
